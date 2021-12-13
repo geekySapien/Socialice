@@ -8,7 +8,7 @@ const requireLogin = (req, res, next) => {
         return res.status(401).json({ error: "You must be logged in " });
     const token = authorization.replace("Bearer ", "");
     jwt.verify(token, process.env.JWT_SECRET, async (err, payload) => {
-      if (err) return res.status(401).json({ error: "You must be logged in jwt verifyu" });
+      if (err) return res.status(401).json({ error: "You must be logged in" });
       const { _id } = payload;
         const user = await User.findById(_id);
         return res.status(200).json({ user: user, message: "User succesfully authorized" });
