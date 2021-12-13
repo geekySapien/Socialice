@@ -1,6 +1,12 @@
 const router = require('express').Router();
 const User = require('../models/User.js');
 const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
+const requireLogin = require('../middleware/requireLogin.js');
+require('dotenv').config();
+
+
+
 // router.get("/", (req, res) => {
 //     res.send("HELLLOO from team socialice");
 // })
@@ -36,7 +42,7 @@ router.post("/signup", async(req, res) => {
     return res.status(200).json({ user: user, message: "Signup Successful" });
 })
 
-module.exports = router;
+
 
 /*
 Route:          /signin
@@ -60,6 +66,15 @@ router.post("/login", async (req, res) => {
     }
 
     const { password, ...others } = user._doc;
-    return res.status(200).json({ message: "Logged In Succe3ssfully", user: others });
+    const token = jwt.sign({ _id: user._id }, process.env.JWT_SECRET);
+    return res.status(200).json({ token:token, message: "Logged In Successfully", user: others });
 
 })
+
+
+router.get("/protected", requireLogin, async (req, res) => {
+    res.send("Welcome, this is one of the protected resource");
+    
+})
+
+module.exports = router;
