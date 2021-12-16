@@ -9,12 +9,12 @@ const postSchema = new mongoose.Schema({
         required:true
     },
     body: {
-        type: String.fromCharCode,
+        type: String,
         required:true
     },
     photo: {
         type: String,
-        required:true
+        default:""
     },
     postedBy: {
         type: mongoose.Types.ObjectId,

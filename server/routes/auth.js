@@ -73,7 +73,7 @@ router.post("/login", async (req, res) => {
 
 
 router.get("/protected", requireLogin, async (req, res) => {
-    res.send("Welcome");
+    res.status(200).json("Welcome");
     
 })
 
