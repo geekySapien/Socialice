@@ -27,7 +27,7 @@ const RegisterComponent = () => {
               type="submit"
               className="bg-blue-200 p-1 hover:bg-blue-400 text-white"
             >
-              Login
+              Sign up
             </button>
           </form>
         </div>

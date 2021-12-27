@@ -5,7 +5,7 @@ const LoginComponent = () => {
   return (
     <>
       <div className="w-full h-screen flex flex-col justify-center items-center gap-4">
-        <div className="border-2 border-gray-200 p-8 flex flex-col items-center gap-6 w-max">
+        <div className="border-2 border-gray-200 p-8 flex flex-col items-center gap-6 w-max rounded-lg">
           <span className="fontStyle  text-3xl">Socialice</span>
           <form className="flex flex-col gap-4">
             <input
