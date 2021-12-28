@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LoginComponent from './Components/Login/LoginComponent';
 import RegisterComponent from './Components/Login/RegisterComponent'
 import ProfileComponent from './Components/Profile/ProfileComponent';
+import { PostsComponent } from './Components/Posts/PostsComponent';
 function App() {
   return (
     <>
@@ -10,7 +11,8 @@ function App() {
         <Routes>
           <Route path="/signin" element={<LoginComponent />} />
           <Route path="/signup" element={<RegisterComponent />} />
-          <Route path="/profile" element={<ProfileComponent/>}/>
+          <Route path="/profile" element={<ProfileComponent />} />
+          <Route path="/" element={<PostsComponent/>}/>
         </Routes>
       </BrowserRouter>
     </>

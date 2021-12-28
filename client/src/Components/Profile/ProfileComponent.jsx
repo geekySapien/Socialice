@@ -3,7 +3,7 @@ import React from "react";
 const ProfileComponent = () => {
   return (
     <>
-      <div className="container max-w-5xl mx-auto flex flex-col gap-4 mt-4 px-16">
+      <div className="container max-w-5xl mx-auto flex flex-col gap-4 mt-4 ">
         <div className="flex  justify-around items-center border-b-2 py-6 border-gray-400">
           <div className="w-20 h-20 md:w-56 md:h-56 ">
             <img
