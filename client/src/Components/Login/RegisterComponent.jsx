@@ -57,7 +57,7 @@ const RegisterComponent = () => {
           </form>
         </div>
         <span className="border-2 border-gray-200 p-4 md:px-16 md:py-4 ">
-          Don't have an account ?{" "}
+          Already have an account ?{" "}
           <Link to="/signin">
             <span className="text-blue-600 cursor-pointer font-semibold">
               Log In

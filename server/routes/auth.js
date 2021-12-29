@@ -37,8 +37,11 @@ router.post("/signup", async(req, res) => {
         password:hashedPassword
     });
     await user.save();
-    
-    return res.status(200).json({ user: user, message: "Signup Successful" });
+    const others = {
+        name,
+       email
+    };
+    return res.status(200).json({ user: others, message: "Signup Successful" });
 })
 
 
