@@ -54,6 +54,7 @@ router.post("/create", requireLogin, async (req, res) => {
     const post = new Post({
         title,
         body,
+        photo,
         postedBy: others
     })
     const newPost = await post.save();

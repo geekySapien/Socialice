@@ -14,6 +14,8 @@ const LoginComponent = () => {
         password
       })
       console.log(res);
+      localStorage.setItem("jwt", res.data.token);
+      localStorage.setItem("user", JSON.stringify(res.data.user));
       res.data && window.location.replace("/");
     } catch (err) {
       console.log(err);

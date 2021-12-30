@@ -1,4 +1,4 @@
-import Reat, { useState } from "react";
+import Reat, { useState, useEffect } from "react";
 import Picker from "emoji-picker-react";
 import { ImUpload2 } from "react-icons/im";
 import axios from 'axios';
@@ -6,7 +6,33 @@ import "./CreatePostComponent.css";
 const CreatePostComponent = () => {
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
-  const [image, setImage] = useState("");
+   const [image, setImage] = useState("");
+  const [url, setURL] = useState("");
+  useEffect(() => {
+    const createPost = async () => {
+      if (url) {
+        try {
+          const res = await axios.post(
+            "/posts/create",
+            {
+              title,
+              body,
+              photo: url,
+            },
+            {
+              headers: {
+                Authorization: "Bearer " + localStorage.getItem("jwt"),
+              },
+            }
+          );
+          console.log(res);
+        } catch (err) {
+          console.log(err);
+        }
+      }
+    }
+    createPost();
+  }, [url])
   const handleSubmit = async(e) => {
     e.preventDefault();
     try {
@@ -18,20 +44,14 @@ const CreatePostComponent = () => {
       "https://api.cloudinary.com/v1_1/geekySapien/image/upload",
       data
       );
-      setImage(res.url);
+      //console.log(res.data.url);
+      
+      setURL(res.data.url);
+      //console.log(url);
     } catch (err) {
       console.log(err);
     }
-    try {
-      const res=await axios.post("/posts/create", {
-        title,
-        body,
-        photo:image
-      })
-      console.log(res);
-    } catch (err) {
-      console.log(err);
-    }
+    
   }
   return (
     <>
