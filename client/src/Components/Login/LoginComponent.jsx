@@ -1,9 +1,11 @@
-import React, {useState}  from "react";
+import React, {useState, useContext}  from "react";
 import { Link } from "react-router-dom";
 import "./Login.css";
 import axios from 'axios';
+import { UserContext } from "../../App";
 
 const LoginComponent = () => {
+  const { state, dispatch } = useContext(UserContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const handleSubmit = async (e) => {
@@ -16,6 +18,7 @@ const LoginComponent = () => {
       console.log(res);
       localStorage.setItem("jwt", res.data.token);
       localStorage.setItem("user", JSON.stringify(res.data.user));
+      dispatch({ type:"USER", payload:res.data.user });
       res.data && window.location.replace("/");
     } catch (err) {
       console.log(err);

@@ -30,7 +30,7 @@ Method:         get
 
 router.get("/myPosts", requireLogin, async (req, res) => {
     try {
-        const posts = await Post.find({ postedBy: req.user._id }).populate("postedBy", "id name");
+        const posts = await Post.find({ postedBy: req.user._id }).populate("postedBy", "_id name");
         return res.status(200).json({message:"All your Posts successfully retrieved", posts})
     } catch (err) {
         return res.status(500).json(err);

@@ -23,30 +23,30 @@ const RegisterComponent = () => {
   }
   return (
     <>
-      <div className="w-full h-screen flex flex-col justify-center items-center gap-4">
-        <div className="border-2 border-gray-200 p-8 flex flex-col items-center gap-6 w-max">
+      <div className="w-full h-full mt-8 flex flex-col justify-center items-center gap-4 overflow-hidden ">
+        <div className="border-2 border-gray-200 p-8 flex flex-col items-center gap-6 ">
           <span className="fontStyle  text-3xl">Socialice</span>
           <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
             <input
               type="text"
-              className="border-2 bg-gray-50 p-2 md:w-72"
+              className="border-2 bg-gray-50 p-2 md:w-72 focus:outline-none"
               placeholder="Username"
               value={name}
-              onChange={(e)=>setName(e.target.value)}
+              onChange={(e) => setName(e.target.value)}
             />
             <input
               type="email"
-              className="border-2 bg-gray-50 p-2 md:w-72"
+              className="border-2 bg-gray-50 p-2 md:w-72 focus:outline-none"
               placeholder="Email"
               value={email}
-              onChange={(e)=>setEmail(e.target.value)}
+              onChange={(e) => setEmail(e.target.value)}
             />
             <input
               type="password"
-              className="border-2 bg-gray-50 p-2 md:w-72"
+              className="border-2 bg-gray-50 p-2 md:w-72 focus:outline-none"
               placeholder="Password"
               value={password}
-              onChange={(e)=>setPassword(e.target.value)}
+              onChange={(e) => setPassword(e.target.value)}
             />
             <button
               type="submit"
