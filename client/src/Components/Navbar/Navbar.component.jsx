@@ -8,7 +8,7 @@ const Navbar = () => {
          <Link to="/">Socialice</Link>
         </div>
         <div
-          className="w-1/2 flex justify-evenly py-2 gap-2 md:gap-3 text-xs md:text-lg"
+          className="w-2/3 flex justify-around py-2   text-xs md:text-lg"
           style={{ fontFamily: "Lora" }}
         >
           <Link to="/signin">
