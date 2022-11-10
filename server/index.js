@@ -26,19 +26,7 @@ mongoose
   .catch((err) => console.log(err));
 
 app.use(express.json());
-// app.use("/images", express.static(path.join(__dirname, "/images")));
-// const storage = multer.diskStorage({
-//   destination: (req, file, cb) => {
-//     cb(null, "/images")
-//   }, filename: (req, file, cb) => {
-//     cb(null, req.body.name)
-//   }
-// });
-// const upload = multer({ storage: storage });
-// app.post("/upload", upload.single("file"), (req, res) => {
-//   console.log("Uplaoding the file.......");
-//   return res.status(200).json({message:"File has been uploaded"})
-// })
+
 app.use("/auth", authRoute);
 app.use("/posts", postRoute);
 
