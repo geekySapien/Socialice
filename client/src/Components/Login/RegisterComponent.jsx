@@ -23,7 +23,7 @@ const RegisterComponent = () => {
   }
   return (
     <>
-      <div className="w-full h-full mt-8 flex flex-col justify-center items-center gap-4 overflow-hidden ">
+      <div className="w-full h-fit mt-8 flex flex-col justify-center items-center gap-4 overflow-hidden ">
         <div className="border-2 border-gray-200 p-8 flex flex-col items-center gap-6 ">
           <span className="fontStyle  text-3xl">Socialice</span>
           <form className="flex flex-col gap-4" onSubmit={handleSubmit}>

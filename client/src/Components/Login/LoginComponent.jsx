@@ -1,7 +1,7 @@
-import React, {useState, useContext}  from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import "./Login.css";
-import axios from 'axios';
+import axios from "axios";
 import { UserContext } from "../../App";
 
 const LoginComponent = () => {
@@ -13,21 +13,22 @@ const LoginComponent = () => {
     try {
       const res = await axios.post("/auth/login", {
         email,
-        password
-      })
-      console.log(res);
+        password,
+      });
+      // console.log(res);
       localStorage.setItem("jwt", res.data.token);
       localStorage.setItem("user", JSON.stringify(res.data.user));
-      dispatch({ type:"USER", payload:res.data.user });
+      dispatch({ type: "USER", payload: res.data.user });
+      console.log(res);
       res.data && window.location.replace("/");
     } catch (err) {
       console.log(err);
     }
-  }
+  };
   return (
     <>
-      <div className="w-full h-screen flex flex-col justify-center items-center gap-4">
-        <div className="border-2 border-gray-200 p-8 flex flex-col items-center gap-6 w-max rounded-lg">
+      <div className="w-full h-fit mt-8 flex flex-col items-center gap-4">
+        <div className="border-2 border-gray-200 p-8 flex flex-col items-center gap-6 rounded-lg">
           <span className="fontStyle  text-3xl">Socialice</span>
           <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
             <input

@@ -55,8 +55,8 @@ const CreatePostComponent = () => {
   }
   return (
     <>
-      <div className="container mx-auto max-w-3xl h-screen flex flex-col items-center mt-4">
-        <form className="w-full flex flex-col items-start justify-center gap-4 border-b-2 border-gray-400 shadow-xl px-4 py-4 hover:shadow-gray-400/50" onSubmit={handleSubmit}>
+      <div className="container mx-auto max-w-3xl h-screen flex flex-col items-center mt-4 ">
+        <form className="w-full flex flex-col items-start justify-center gap-4 border-b-2 border-gray-400 shadow-xl px-4 py-4 hover:shadow-gray-400/50" onSubmit={handleSubmit}> 
           <label className="text-lg md: text-xl font-semibold ">Title</label>
           <input
             className="w-full p-4 border-b-2 border-gray-100 focus:outline-none"
